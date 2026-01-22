@@ -6357,6 +6357,7 @@
       .mobile_nav .mobile_mainmenu li a {
         padding: 9px 0;
         display: block;
+        position: relative;
         color: #1b1d21;
         font-weight: 600;
         border-bottom: 1px solid #e5e5e5;
@@ -6402,9 +6403,16 @@
         transform: rotate(90deg);
       }
       .mobile_nav .mobile_mainmenu > li.current-menu-ancestor > a,
-      .mobile_nav .mobile_mainmenu > li.current-menu-item > a,
+      .mobile_nav .mobile_mainmenu > li.current-menu-item > a {
+        color: #43baff;
+      }
       .mobile_nav .mobile_mainmenu > li > a:hover {
         color: #43baff;
+      }
+      .mobile_nav .mobile_mainmenu > li.current-menu-item > a,
+      .mobile_nav .mobile_mainmenu > li.current-menu-ancestor > a {
+        border-bottom-color: #43baff;
+        border-bottom-width: 2px;
       }
       .screen-reader-text {
         border: 0;
@@ -8446,6 +8454,17 @@
         color: #1b1d21;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       }
+      /* Active state for mobile menu (match desktop blue text + underline) */
+      .mmenu-wrapper .mobile-nav .mobile_mainmenu > li.current-menu-item > a,
+      .mmenu-wrapper .mobile-nav .mobile_mainmenu > li.current-menu-ancestor > a {
+        color: #43baff !important;
+        border-bottom-color: #43baff !important;
+        border-bottom-width: 2px !important;
+      }
+      /* Hover state for mobile menu */
+      .mmenu-wrapper .mobile-nav .mobile_mainmenu > li > a:hover {
+        color: #43baff;
+      }
       .mmenu-wrapper .mobile_mainmenu > li.menu-item-has-children .arrow {
         color: #fff;
         position: absolute;
@@ -8647,6 +8666,32 @@
       }
       #back-to-top:hover {
         bottom: 45px;
+      }
+      #whatsapp-button {
+        position: fixed;
+        right: 40px;
+        bottom: 110px;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: #25d366;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        box-shadow: 6px 6px 13px 0 rgba(42, 67, 113, 0.2);
+        z-index: 1000;
+        transition: all 0.3s ease-in-out;
+      }
+      #whatsapp-button:hover {
+        background: #1ebe5d;
+        transform: translateY(-3px);
+      }
+      #whatsapp-button svg {
+        width: 22px;
+        height: 22px;
+        display: block;
       }
       .grid-lines {
         position: absolute;
@@ -14989,7 +15034,7 @@
           .elementor-element.elementor-element-f8ce257:not(
             .elementor-motion-effects-element-type-background
           ) {
-          --wpr-bg-c7e50a67-3ee8-4727-9b4b-a334ebb278e1: url("wp-content/uploads/sites/4/2020/02/bg-cta1-home1.jpg");
+          --wpr-bg-c7e50a67-3ee8-4727-9b4b-a334ebb278e1: url("https://example.com/your-new-image.jpg");
         }
         .elementor-2274
           .elementor-element.elementor-element-1cd5b68:not(
@@ -15606,12 +15651,7 @@
                                   <li class="menu-item menu-item-home"><a href="#home">Home</a></li>
                                   <li class="menu-item"><a href="#about">About Us</a></li>
                                   <li class="menu-item"><a href="#whychooseus">Why Choose Us</a></li>
-                                  <li class="menu-item menu-item-has-children">
-                                    <a href="#services">Services</a>
-                                    <ul class="sub-menu">
-                                      <li class="menu-item"><a href="#services">All Services</a></li>
-                                    </ul>
-                                  </li>
+                                  <li class="menu-item"><a href="#services">Services</a></li>
                                   <li class="menu-item"><a href="#contact">Contact</a></li>
                                 </ul>
                               </div>
@@ -16209,7 +16249,7 @@
 							--><a
                                   id="slider-2-slide-4-layer-10"
                                   class="rs-layer rev-btn"
-                                  href="#"
+                                  href="#services"
                                   target="_self"
                                   rel="nofollow"
                                   data-type="button"
@@ -16305,7 +16345,7 @@
 							--><a
                                   id="slider-2-slide-5-layer-10"
                                   class="rs-layer rev-btn"
-                                  href="#"
+                                  href="#services"
                                   target="_self"
                                   rel="nofollow"
                                   data-type="button"
@@ -16401,7 +16441,7 @@
 							--><a
                                   id="slider-2-slide-6-layer-10"
                                   class="rs-layer rev-btn"
-                                  href="#"
+                                  href="#services"
                                   target="_self"
                                   rel="nofollow"
                                   data-type="button"
@@ -17544,11 +17584,10 @@
                             <div class="elementor-widget-container">
                               <div class="ot-heading">
                                 <span
-                                  >// We Carry more Than Just Good Coding
-                                  Skills</span
+                                  >// Christech delivers reliable IT solutions</span
                                 >
                                 <h2 class="main-heading">
-                                  Let's Build Your Website!
+                                  Let’s build your next IT solution.
                                 </h2>
                               </div>
                             </div>
@@ -17573,7 +17612,9 @@
                               <div class="elementor-button-wrapper">
                                 <a
                                   class="elementor-button elementor-button-link elementor-size-md"
-                                  href="contacts/index.html"
+                                  href="https://wa.me/233208334976"
+                                  target="_blank"
+                                  rel="noopener"
                                 >
                                   <span
                                     class="elementor-button-content-wrapper"
@@ -17684,26 +17725,26 @@
                             <div class="projects-thumbnail">
                               <a
                                 href="projects/app-for-virtual-reality/index.html"
-                                aria-label="App for Virtual Reality"
+                                aria-label="Campus Network Modernization"
                               >
-                                <img
-                                  decoding="async"
-                                  width="720"
-                                  height="520"
-                                  src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20720%20520'%3E%3C/svg%3E"
-                                  class="attachment-engitech-portfolio-thumbnail-carousel size-engitech-portfolio-thumbnail-carousel wp-post-image"
-                                  alt="Project 1"
-                                  data-lazy-src="/wp-content/uploads/sites/4/2019/11/project1-720x520.jpg"
-                                /><noscript
-                                  ><img
-                                    loading="lazy"
-                                    decoding="async"
-                                    width="720" b
-                                    height="520"
-                                    src="wp-content/uploads/sites/4/2019/11/project1-720x520.jpg"
-                                    class="attachment-engitech-portfolio-thumbnail-carousel size-engitech-portfolio-thumbnail-carousel wp-post-image"
-                                    alt="Project 1"
-                                /></noscript>
+                                 <img
+                                   decoding="async"
+                                   width="720"
+                                   height="520"
+                                   src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20720%20520'%3E%3C/svg%3E"
+                                   class="attachment-engitech-portfolio-thumbnail-carousel size-engitech-portfolio-thumbnail-carousel wp-post-image"
+                                   alt="Modern Network Infrastructure"
+                                   data-lazy-src="/wp-content/uploads/sites/4/2019/11/project6-720x520.jpg"
+                                 /><noscript
+                                   ><img
+                                     loading="lazy"
+                                     decoding="async"
+                                     width="720"
+                                     height="520"
+                                     src="/wp-content/uploads/sites/4/2019/11/project6-720x520.jpg"
+                                     class="attachment-engitech-portfolio-thumbnail-carousel size-engitech-portfolio-thumbnail-carousel wp-post-image"
+                                     alt="Modern Network Infrastructure"
+                                 /></noscript>
                                 <span class="overlay"></span>
                               </a>
                             </div>
@@ -17712,22 +17753,19 @@
                                 <a
                                   class="btn-link"
                                   href="projects/app-for-virtual-reality/index.html"
-                                  aria-label="App for Virtual Reality"
+                                  aria-label="Campus Network Modernization"
                                   ><i class="flaticon-right-arrow-1"></i
                                 ></a>
                                 <h5>
                                   <a
                                     href="projects/app-for-virtual-reality/index.html"
-                                    >App for Virtual Reality</a
+                                    >Campus Network Modernization</a
                                   >
                                 </h5>
                                 <p class="portfolio-cates">
-                                  <a href="portfolio-cat/design/index.html"
-                                    >Design</a
-                                  ><span>/</span
-                                  ><a href="portfolio-cat/ideas/index.html"
-                                    >Ideas</a
-                                  ><span>/</span>
+                                  <a href="#">Networking</a><span>/</span
+                                  ><a href="#">Infrastructure</a><span
+                                  >/</span>
                                 </p>
                               </div>
                             </div>
@@ -17739,26 +17777,26 @@
                             <div class="projects-thumbnail">
                               <a
                                 href="projects/analysis-of-security/index.html"
-                                aria-label="Analysis of Security"
+                                aria-label="Security Hardening Program"
                               >
-                                <img
-                                  decoding="async"
-                                  width="720"
-                                  height="520"
-                                  src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20720%20520'%3E%3C/svg%3E"
-                                  class="attachment-engitech-portfolio-thumbnail-carousel size-engitech-portfolio-thumbnail-carousel wp-post-image"
-                                  alt=""
-                                  data-lazy-src="/wp-content/uploads/sites/4/2019/11/project3-720x520.jpg"
-                                /><noscript
-                                  ><img
-                                    loading="lazy"
-                                    decoding="async"
-                                    width="720"
-                                    height="520"
-                                    src="wp-content/uploads/sites/4/2019/11/project3-720x520.jpg"
-                                    class="attachment-engitech-portfolio-thumbnail-carousel size-engitech-portfolio-thumbnail-carousel wp-post-image"
-                                    alt=""
-                                /></noscript>
+                                 <img
+                                   decoding="async"
+                                   width="720"
+                                   height="520"
+                                   src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20720%20520'%3E%3C/svg%3E"
+                                   class="attachment-engitech-portfolio-thumbnail-carousel size-engitech-portfolio-thumbnail-carousel wp-post-image"
+                                   alt="Cybersecurity Program"
+                                   data-lazy-src="/wp-content/uploads/sites/4/2019/11/project5-720x520.jpg"
+                                 /><noscript
+                                   ><img
+                                     loading="lazy"
+                                     decoding="async"
+                                     width="720"
+                                     height="520"
+                                     src="/wp-content/uploads/sites/4/2019/11/project5-720x520.jpg"
+                                     class="attachment-engitech-portfolio-thumbnail-carousel size-engitech-portfolio-thumbnail-carousel wp-post-image"
+                                     alt="Cybersecurity Program"
+                                 /></noscript>
                                 <span class="overlay"></span>
                               </a>
                             </div>
@@ -17767,22 +17805,18 @@
                                 <a
                                   class="btn-link"
                                   href="projects/analysis-of-security/index.html"
-                                  aria-label="Analysis of Security"
+                                  aria-label="Security Hardening Program"
                                   ><i class="flaticon-right-arrow-1"></i
                                 ></a>
                                 <h5>
                                   <a
                                     href="projects/analysis-of-security/index.html"
-                                    >Analysis of Security</a
+                                    >Security Hardening Program</a
                                   >
                                 </h5>
                                 <p class="portfolio-cates">
-                                  <a href="portfolio-cat/ideas/index.html"
-                                    >Ideas</a
-                                  ><span>/</span
-                                  ><a href="portfolio-cat/technology/index.html"
-                                    >Technology</a
-                                  ><span>/</span>
+                                  <a href="#">Security</a><span>/</span
+                                  ><a href="#">Compliance</a><span>/</span>
                                 </p>
                               </div>
                             </div>
@@ -17794,26 +17828,26 @@
                             <div class="projects-thumbnail">
                               <a
                                 href="projects/ecommerce-website/index.html"
-                                aria-label="eCommerce Website"
+                                aria-label="Cloud Migration to Azure"
                               >
-                                <img
-                                  decoding="async"
-                                  width="720"
-                                  height="520"
-                                  src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20720%20520'%3E%3C/svg%3E"
-                                  class="attachment-engitech-portfolio-thumbnail-carousel size-engitech-portfolio-thumbnail-carousel wp-post-image"
-                                  alt="Project 4"
-                                  data-lazy-src="/wp-content/uploads/sites/4/2019/11/project4-720x520.jpg"
-                                /><noscript
-                                  ><img
-                                    loading="lazy"
-                                    decoding="async"
-                                    width="720"
-                                    height="520"
-                                    src="wp-content/uploads/sites/4/2019/11/project4-720x520.jpg"
-                                    class="attachment-engitech-portfolio-thumbnail-carousel size-engitech-portfolio-thumbnail-carousel wp-post-image"
-                                    alt="Project 4"
-                                /></noscript>
+                                 <img
+                                   decoding="async"
+                                   width="720"
+                                   height="520"
+                                   src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20720%20520'%3E%3C/svg%3E"
+                                   class="attachment-engitech-portfolio-thumbnail-carousel size-engitech-portfolio-thumbnail-carousel wp-post-image"
+                                   alt="Azure Cloud Migration"
+                                   data-lazy-src="/wp-content/uploads/sites/4/2019/11/project4-720x520.jpg"
+                                 /><noscript
+                                   ><img
+                                     loading="lazy"
+                                     decoding="async"
+                                     width="720"
+                                     height="520"
+                                     src="/wp-content/uploads/sites/4/2019/11/project4-720x520.jpg"
+                                     class="attachment-engitech-portfolio-thumbnail-carousel size-engitech-portfolio-thumbnail-carousel wp-post-image"
+                                     alt="Azure Cloud Migration"
+                                 /></noscript>
                                 <span class="overlay"></span>
                               </a>
                             </div>
@@ -17822,22 +17856,18 @@
                                 <a
                                   class="btn-link"
                                   href="projects/ecommerce-website/index.html"
-                                  aria-label="eCommerce Website"
+                                  aria-label="Cloud Migration to Azure"
                                   ><i class="flaticon-right-arrow-1"></i
                                 ></a>
                                 <h5>
                                   <a
                                     href="projects/ecommerce-website/index.html"
-                                    >eCommerce Website</a
+                                    >Cloud Migration to Azure</a
                                   >
                                 </h5>
                                 <p class="portfolio-cates">
-                                  <a href="portfolio-cat/design/index.html"
-                                    >Design</a
-                                  ><span>/</span
-                                  ><a href="portfolio-cat/ideas/index.html"
-                                    >Ideas</a
-                                  ><span>/</span>
+                                  <a href="#">Cloud</a><span>/</span
+                                  ><a href="#">Migration</a><span>/</span>
                                 </p>
                               </div>
                             </div>
@@ -17849,26 +17879,26 @@
                             <div class="projects-thumbnail">
                               <a
                                 href="projects/basics-project/index.html"
-                                aria-label="Basics Project"
+                                aria-label="Digital Workplace Rollout"
                               >
-                                <img
-                                  decoding="async"
-                                  width="720"
-                                  height="520"
-                                  src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20720%20520'%3E%3C/svg%3E"
-                                  class="attachment-engitech-portfolio-thumbnail-carousel size-engitech-portfolio-thumbnail-carousel wp-post-image"
-                                  alt=""
-                                  data-lazy-src="/wp-content/uploads/sites/4/2019/11/project8-720x520.jpg"
-                                /><noscript
-                                  ><img
-                                    loading="lazy"
-                                    decoding="async"
-                                    width="720"
-                                    height="520"
-                                    src="wp-content/uploads/sites/4/2019/11/project8-720x520.jpg"
-                                    class="attachment-engitech-portfolio-thumbnail-carousel size-engitech-portfolio-thumbnail-carousel wp-post-image"
-                                    alt=""
-                                /></noscript>
+                                 <img
+                                   decoding="async"
+                                   width="720"
+                                   height="520"
+                                   src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20720%20520'%3E%3C/svg%3E"
+                                   class="attachment-engitech-portfolio-thumbnail-carousel size-engitech-portfolio-thumbnail-carousel wp-post-image"
+                                   alt="Modern Digital Workplace"
+                                   data-lazy-src="/wp-content/uploads/sites/4/2019/11/project7-720x520.jpg"
+                                 /><noscript
+                                   ><img
+                                     loading="lazy"
+                                     decoding="async"
+                                     width="720"
+                                     height="520"
+                                     src="/wp-content/uploads/sites/4/2019/11/project7-720x520.jpg"
+                                     class="attachment-engitech-portfolio-thumbnail-carousel size-engitech-portfolio-thumbnail-carousel wp-post-image"
+                                     alt="Modern Digital Workplace"
+                                 /></noscript>
                                 <span class="overlay"></span>
                               </a>
                             </div>
@@ -17877,22 +17907,18 @@
                                 <a
                                   class="btn-link"
                                   href="projects/basics-project/index.html"
-                                  aria-label="Basics Project"
+                                  aria-label="Digital Workplace Rollout"
                                   ><i class="flaticon-right-arrow-1"></i
                                 ></a>
                                 <h5>
                                   <a href="projects/basics-project/index.html"
-                                    >Basics Project</a
+                                    >Digital Workplace Rollout</a
                                   >
                                 </h5>
                                 <p class="portfolio-cates">
-                                  <a href="portfolio-cat/design/index.html"
-                                    >Design</a
-                                  ><span>/</span
-                                  ><a
-                                    href="portfolio-cat/development/index.html"
-                                    >Development</a
-                                  ><span>/</span>
+                                  <a href="#">Collaboration</a><span>/</span
+                                  ><a href="#">Modern Workplace</a><span
+                                  >/</span>
                                 </p>
                               </div>
                             </div>
@@ -17904,7 +17930,7 @@
                             <div class="projects-thumbnail">
                               <a
                                 href="projects/social-media-app/index.html"
-                                aria-label="Social Media App"
+                                aria-label="Managed IT Support Desk"
                               >
                                 <img
                                   decoding="async"
@@ -17912,17 +17938,17 @@
                                   height="520"
                                   src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20720%20520'%3E%3C/svg%3E"
                                   class="attachment-engitech-portfolio-thumbnail-carousel size-engitech-portfolio-thumbnail-carousel wp-post-image"
-                                  alt=""
-                                  data-lazy-src="/wp-content/uploads/sites/4/2019/11/project7-720x520.jpg"
+                                  alt="Managed IT Support Desk"
+                                  data-lazy-src="/wp-content/uploads/sites/4/2019/11/project8-720x520.jpg"
                                 /><noscript
                                   ><img
                                     loading="lazy"
                                     decoding="async"
                                     width="720"
                                     height="520"
-                                    src="wp-content/uploads/sites/4/2019/11/project7-720x520.jpg"
+                                    src="wp-content/uploads/sites/4/2019/11/project8-720x520.jpg"
                                     class="attachment-engitech-portfolio-thumbnail-carousel size-engitech-portfolio-thumbnail-carousel wp-post-image"
-                                    alt=""
+                                    alt="Managed IT Support Desk"
                                 /></noscript>
                                 <span class="overlay"></span>
                               </a>
@@ -17932,21 +17958,17 @@
                                 <a
                                   class="btn-link"
                                   href="projects/social-media-app/index.html"
-                                  aria-label="Social Media App"
+                                  aria-label="Managed IT Support Desk"
                                   ><i class="flaticon-right-arrow-1"></i
                                 ></a>
                                 <h5>
                                   <a href="projects/social-media-app/index.html"
-                                    >Social Media App</a
+                                    >Managed IT Support Desk</a
                                   >
                                 </h5>
                                 <p class="portfolio-cates">
-                                  <a href="portfolio-cat/design/index.html"
-                                    >Design</a
-                                  ><span>/</span
-                                  ><a href="portfolio-cat/technology/index.html"
-                                    >Technology</a
-                                  ><span>/</span>
+                                  <a href="#">Support</a><span>/</span
+                                  ><a href="#">Service Desk</a><span>/</span>
                                 </p>
                               </div>
                             </div>
@@ -17980,10 +18002,10 @@
                   >
                     <div class="elementor-widget-container">
                       <div class="ot-heading">
-                        <span>// TECHNOLOGY INDEX</span>
+                        <span>// CHRITECH TECHNOLOGY INDEX</span>
                         <h2 class="main-heading">
-                          We Deliver Solution with <br />
-                          the Goal of Trusting Relationships
+                          Solutions engineered by Christech <br />
+                          to earn your trust every day
                         </h2>
                       </div>
                     </div>
@@ -18663,6 +18685,20 @@
     </script>
 
     <div class="octf_tools_bar__sidebar-cover"></div>
+    <a
+      id="whatsapp-button"
+      href="https://wa.me/233208334976"
+      target="_blank"
+      rel="noopener"
+      aria-label="Chat with Christech on WhatsApp"
+    >
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 32 32">
+        <path
+          fill="currentColor"
+          d="M16 3c-7.3 0-13 5.7-13 12.8 0 2.3.6 4.5 1.8 6.4L3 29l7.1-1.9c1.9 1 4 1.5 5.9 1.5 7.3 0 13-5.7 13-12.8C29 8.7 23.3 3 16 3zm0 23.3c-1.7 0-3.5-.5-5-1.3l-.4-.2-4.2 1.1 1.1-4-.3-.4C6.3 19.5 5.7 17.7 5.7 16 5.7 10.9 10.2 6.8 16 6.8c5.8 0 10.3 4.1 10.3 9.2 0 5.1-4.5 9.3-10.3 9.3zm5.6-6.9c-.3-.1-1.6-.8-1.8-.9-.2-.1-.3-.1-.4.1-.1.3-.5.9-.6 1-.1.1-.2.2-.5.1-.3-.1-1-.3-1.8-1.1-.7-.6-1.2-1.4-1.4-1.6-.1-.3 0-.4.1-.5.1-.1.3-.3.4-.4.1-.1.1-.2.2-.3.1-.1.1-.2 0-.4 0-.1-.4-1.1-.6-1.5-.2-.5-.4-.4-.5-.4h-.4c-.2 0-.4.1-.5.2-.2.2-.7.6-.7 1.6s.7 1.9.8 2.1c.1.2 1.5 2.4 3.5 3.3.5.2.9.4 1.3.5.5.2 1 .2 1.3.1.4-.1 1.3-.5 1.5-1 .2-.5.2-1 .1-1.1-.1-.1-.3-.2-.6-.3z"
+        ></path>
+      </svg>
+    </a>
     <a id="back-to-top" href="#" class="show" aria-label="To Top"
       ><i class="flaticon-up-arrow"></i
     ></a>
@@ -19591,10 +19627,13 @@
         });
         if(!hash) hash = '#home';
         var a = document.querySelector('.main-navigation a[href="'+hash+'"], .mobile_mainmenu a[href="'+hash+'"]');
-        if(a && a.closest('li')) a.closest('li').classList.add('current-menu-item');
-        else{
+        if(a && a.closest('li')) {
+          a.closest('li').classList.add('current-menu-item');
+        } else{
           var home = document.querySelector('.main-navigation li.menu-item-home, .mobile_mainmenu li.menu-item-home');
-          if(home) home.classList.add('current-menu-item');
+          if(home) {
+            home.classList.add('current-menu-item');
+          }
         }
       }
 
@@ -19603,6 +19642,30 @@
         var id = hash.charAt(0)==='#' ? hash.slice(1) : hash;
         var el = document.getElementById(id) || document.querySelector('[name="'+id+'"]');
         if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+      }
+
+      function getHeaderOffset(){
+        // Keep in sync with mPS2id offset (80) plus a little buffer
+        return 90;
+      }
+
+      function getCurrentSectionHash(sectionIds){
+        var offset = getHeaderOffset();
+        var best = null;
+        for(var i=0;i<sectionIds.length;i++){
+          var id = sectionIds[i];
+          var el = document.getElementById(id);
+          if(!el) continue;
+          var r = el.getBoundingClientRect();
+          // Section considered active if the offset line is within it
+          if(r.top - offset <= 0 && r.bottom - offset > 0){
+            best = '#'+id;
+            break;
+          }
+        }
+        // If we're above the first section content, default to home
+        if(!best) best = '#home';
+        return best;
       }
 
       document.addEventListener('DOMContentLoaded', function(){
@@ -19619,6 +19682,25 @@
 
         // set initial active
         setActive(location.hash || '#home');
+
+        // keep active nav in sync with scroll position (desktop + mobile)
+        (function(){
+          var sectionIds = ['home','about','whychooseus','services','contact'];
+          var ticking = false;
+          function onScroll(){
+            if(ticking) return;
+            ticking = true;
+            window.requestAnimationFrame(function(){
+              ticking = false;
+              var hash = getCurrentSectionHash(sectionIds);
+              setActive(hash);
+            });
+          }
+          window.addEventListener('scroll', onScroll, {passive:true});
+          window.addEventListener('resize', onScroll);
+          // run once after load
+          setTimeout(onScroll, 50);
+        })();
 
         // attach click handlers and capture early pointer events; temporarily block panel openers
         (function(){
@@ -19663,12 +19745,14 @@
                 if(panelBlockTimer) clearTimeout(panelBlockTimer);
                 panelBlockTimer = setTimeout(function(){ window.__chr_block_sidepanel = false; panelBlockTimer = null; }, 900);
                 scrollToHash(href);
+                // Attempt to click the close button to ensure all menu cleanup runs
+                var closeBtn = document.querySelector('.mmenu-close');
+                if(closeBtn) {
+                  try { closeBtn.click(); } catch(ignore) {}
+                }
+                // Ensure active class is set after menu potential close-related DOM manipulations
                 setActive(href);
                 try{ history.replaceState(null,'',href); }catch(e){}
-                // force close side panel if already open
-                var side = document.getElementById('side-panel');
-                if(side){ side.classList.remove('side-panel-open'); document.body.classList.remove('side-panel-active'); }
-                var closeBtn = document.querySelector('.side-panel-close'); if(closeBtn) try{ closeBtn.click(); }catch(ignore){}
               }
             });
           });
