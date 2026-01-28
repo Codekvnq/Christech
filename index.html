@@ -15161,6 +15161,68 @@
       content="WP Rocket 3.18.3"
       data-wpr-features="wpr_lazyload_css_bg_img wpr_remove_unused_css wpr_defer_js wpr_minify_js wpr_lazyload_images wpr_oci wpr_minify_css wpr_desktop"
     />
+    <style>
+      /* Fix for laptop overlap range (1025px to 1360px) */
+      @media (min-width: 1025px) and (max-width: 1360px) {
+        .elementor-element-65c14b10 .elementor-element-581decff {
+            width: 30% !important;
+        }
+        .elementor-element-65c14b10 .elementor-element-1ca041d7 {
+            width: 70% !important;
+        }
+        .elementor-element-28dcb03 .elementor-icon-list-items {
+            white-space: nowrap;
+        }
+      }
+
+      /* Tablet / Small Laptop Layout (Stacking) */
+      @media (max-width: 1024px) {
+        .elementor-element-65c14b10 .elementor-column {
+          width: 100% !important;
+        }
+        .elementor-element-65c14b10 .elementor-widget-social-icons {
+          text-align: center;
+          margin-bottom: 5px;
+        }
+        .elementor-element-65c14b10 .elementor-widget-social-icons .elementor-grid {
+          justify-content: center;
+        }
+        .elementor-element-65c14b10 .elementor-icon-list--layout-inline {
+          text-align: center; 
+        }
+        .elementor-element-65c14b10 .elementor-icon-list-items {
+          justify-content: center !important;
+          flex-wrap: wrap !important;
+          display: flex !important;
+        }
+        .elementor-element-28dcb03 .elementor-icon-list-item {
+           justify-content: center;
+           margin: 2px 10px !important;
+           white-space: nowrap; 
+        }
+		
+		/* Footer responsive adjustments */
+		.elementor-element-e1304a5,
+		.contact-info.box-style2 {
+			text-align: center;
+		}
+		.contact-info.box-style2 p {
+			word-break: break-word; /* Ensure long numbers wrap */
+		}
+      }
+
+      /* Mobile Layout */
+      @media (max-width: 500px) {
+        .elementor-element-28dcb03 .elementor-icon-list-items {
+           flex-direction: column;
+           align-items: center;
+        }
+        .elementor-element-28dcb03 .elementor-icon-list-item {
+           margin: 5px 0 !important;
+           white-space: normal;
+        }
+      }
+    </style>
   </head>
 
   <body
@@ -15286,11 +15348,6 @@
                           <li
                             class="elementor-icon-list-item elementor-inline-item"
                           >
-                            <span class="elementor-icon-list-text"></span>
-                          </li>
-                          <li
-                            class="elementor-icon-list-item elementor-inline-item"
-                          >
                             <a href="tel:+233 20-833-4976">
                               <span class="elementor-icon-list-icon">
                                 <svg
@@ -15310,7 +15367,7 @@
                                 </svg>
                               </span>
                               <span class="elementor-icon-list-text"
-                                >+233 20-833-4976</span
+                                >+233 20-833-4976 / +233 244-349-457</span
                               >
                             </a>
                           </li>
@@ -16045,7 +16102,7 @@
 
                           <div class="elementor-icon-box-content">
                             <p class="elementor-icon-box-description">
-                              +233 20-833-4976
+                              +233 20-833-4976 / +233 244-349-457
                             </p>
                           </div>
                         </div>
@@ -18487,7 +18544,7 @@
                                 <div class="box-icon">
                                   <i class="flaticon-phone-1"></i>
                                 </div>
-                                <p>+233 20-833-4976</p>
+                                <p>+233 20-833-4976 / +233 244-349-457</p>
                                 <h6>Our Phone</h6>
                               </div>
                             </div>
