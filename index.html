@@ -8369,6 +8369,16 @@
       .header-mobile .is-stuck {
         background-color: #fff;
       }
+      .header-mobile.is-stuck {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        background-color: #fff;
+        box-shadow: 4px 4px 30px 0 rgba(42, 67, 113, 0.15);
+        animation: 0.65s cubic-bezier(0.23, 1, 0.32, 1) both stickySlideDown;
+      }
       .octf-menu-mobile {
         position: relative;
       }
@@ -19820,6 +19830,61 @@
         })();
 
         window.addEventListener('hashchange', function(){ setActive(location.hash || '#home'); });
+      });
+    })();
+    </script>
+
+    <!-- Mobile Sticky Header Script -->
+    <script>
+    (function() {
+      document.addEventListener('DOMContentLoaded', function() {
+        var headerMobile = document.querySelector('.header-mobile');
+        if (!headerMobile) return;
+
+        // Create a clone placeholder to prevent content jump when header becomes fixed
+        var clone = document.createElement('div');
+        clone.className = 'header-mobile-clone';
+        clone.style.display = 'none';
+        headerMobile.parentNode.insertBefore(clone, headerMobile.nextSibling);
+
+        var lastScrollY = 0;
+        var isStuck = false;
+
+        function updateStickyMobile() {
+          // Only apply on mobile viewport (matches the CSS media query)
+          if (window.innerWidth > 1024) {
+            // Desktop: clean up if stuck
+            if (isStuck) {
+              headerMobile.classList.remove('is-stuck');
+              clone.style.display = 'none';
+              isStuck = false;
+            }
+            return;
+          }
+
+          var headerHeight = headerMobile.offsetHeight;
+          var siteHeader = document.getElementById('site-header');
+          var triggerPoint = siteHeader ? siteHeader.offsetHeight + 1 : headerHeight + 1;
+
+          if (window.scrollY >= triggerPoint) {
+            if (!isStuck) {
+              clone.style.height = headerHeight + 'px';
+              clone.style.display = 'block';
+              headerMobile.classList.add('is-stuck');
+              isStuck = true;
+            }
+          } else {
+            if (isStuck) {
+              headerMobile.classList.remove('is-stuck');
+              clone.style.display = 'none';
+              isStuck = false;
+            }
+          }
+        }
+
+        window.addEventListener('scroll', updateStickyMobile, { passive: true });
+        window.addEventListener('resize', updateStickyMobile, { passive: true });
+        updateStickyMobile();
       });
     })();
     </script>
